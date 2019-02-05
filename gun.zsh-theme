@@ -14,6 +14,8 @@ function prompt_char {
 local current_dir='${PWD/#$HOME/~}'
 local git_info='$(git_prompt_info)'
 
+source $HOME/.zplug/repos/robbyrussell/oh-my-zsh/plugins/kube-ps1/kube-ps1.plugin.zsh
+
 PROMPT="╭─%{$FG[040]%}%n%{$reset_color%} %{$terminfo[bold]$FG[226]%}${current_dir}%{$reset_color%}${git_info} %{$FG[239]%}%{$reset_color%}
 | $(kube-ps1)
 ╰─$(virtualenv_info)$(prompt_char) "
