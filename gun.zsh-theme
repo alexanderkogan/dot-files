@@ -14,9 +14,9 @@ local current_user='%{$FG[040]%}%n%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$FG[226]%}${PWD/#$HOME/~}%{$reset_color%}'
 local git_info='$(git_prompt_info)'
 local kubePrompt='$(kube_ps1)' # to show add ${kubePrompt} in $PROMPT
-local virtualenv_info_var='$(virtualenv_info)'
+local virtualenv_info_var='%{$FG[244]%}$(virtualenv_info)%{$reset_color%}'
 
-PROMPT="${current_user} ${current_dir}${git_info} %{$FG[239]%}${virtualenv_info_var}%{$reset_color%}
+PROMPT="${current_user} ${current_dir}${git_info} ${virtualenv_info_var}
 $(prompt_char) "
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$reset_color%}%{$FG[196]%}["
